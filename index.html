@@ -2,133 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>UBI-ID System - Technical Whitepaper</title>
+  <title>UBI-ID System - Official Whitepaper</title>
   <link rel="stylesheet" href="style/achromatic.css">
 </head>
 <body>
-  <h1>UBI-ID System: A Constitutional Digital Framework for Fair Post-Work Economies</h1>
-  <p><strong>Author:</strong> Enes Balıkçı</p>
+  <header>
+    <h1>UBI-ID System</h1>
+    <p><strong>Prepared by:</strong> Enes Balıkçı | France, 2025</p>
+    <nav>
+      <ul>
+        <li><a href="#abstract">Abstract</a></li>
+        <li><a href="#eligibility">Eligibility</a></li>
+        <li><a href="#education">Education Bonus</a></li>
+        <li><a href="#contribution">Contribution Bonus</a></li>
+        <li><a href="#penalty">Penalty Model</a></li>
+        <li><a href="#formula">Final Formula</a></li>
+        <li><a href="#legal">Legal Basis</a></li>
+      </ul>
+    </nav>
+    <hr />
+  </header>
 
-  <h2>Abstract</h2>
-  <p>The UBI-ID system is a socio-economic model designed to provide a sustainable and constitutionally grounded income distribution mechanism for citizens of France. Built on the principles of state-recognized digital identity, verified education, social contribution, and lawful conduct, the system dynamically adjusts Universal Basic Income (UBI) levels using transparent algorithms. This whitepaper outlines its full legal, technical, and ethical foundation.</p>
+  <section id="abstract">
+    <h2>Abstract</h2>
+    <p>The UBI-ID system is a state-aligned economic framework that allocates Universal Basic Income based on legal identity, verified education, social contribution, and criminal record, grounded in the 1958 Constitution of France.</p>
+  </section>
 
-  <h2>1. Introduction</h2>
-  <p>As AI and automation reduce the role of human labor in the economy, traditional employment-based income models become obsolete. The UBI-ID system provides an equitable replacement through a state-regulated digital platform that rewards civic responsibility, educational achievement, and lawful behavior, while protecting every citizen's right to dignity and sustenance.</p>
+  <section id="eligibility">
+    <h2>Eligibility Criteria</h2>
+    <ul>
+      <li>Age 18+</li>
+      <li>Digital ID linked to national registry</li>
+      <li>Base UBI: 1,400 EUR/month</li>
+      <li>Minimum threshold: 800 EUR/month</li>
+    </ul>
+  </section>
 
-  <h2>2. Architecture Overview</h2>
-  <ul>
-    <li><strong>Digital Identity:</strong> State-issued and encrypted digital ID is required to participate.</li>
-    <li><strong>Education Verifier:</strong> Accepts only state-accredited institutions and ministries of education.</li>
-    <li><strong>Penalty & Justice Interface:</strong> Connects to national judiciary APIs for criminal records.</li>
-    <li><strong>Contribution Registry:</strong> Validates voluntary social engagement through partner NGOs.</li>
-    <li><strong>UBI Engine:</strong> Calculates monthly payouts using algorithmic evaluation of all inputs.</li>
-  </ul>
+  <section id="education">
+    <h2>Education Bonus</h2>
+    <p>Only accredited diplomas issued by recognized national institutions are accepted.</p>
+    <table>
+      <thead><tr><th>Level</th><th>Bonus</th></tr></thead>
+      <tbody>
+        <tr><td>High School</td><td>+5%</td></tr>
+        <tr><td>Bachelor</td><td>+15%</td></tr>
+        <tr><td>Master</td><td>+25%</td></tr>
+        <tr><td>PhD</td><td>+35%</td></tr>
+      </tbody>
+    </table>
+  </section>
 
-  <h2>3. Eligibility Rules</h2>
-  <ul>
-    <li>All citizens aged 18 and above are entitled to UBI.</li>
-    <li>Youths under 18 receive education-linked bursaries instead.</li>
-    <li>Base UBI: 1,400 EUR/month, minimum guaranteed: 800 EUR/month.</li>
-    <li>Digital ID must be linked to state civil registry.</li>
-  </ul>
+  <section id="contribution">
+    <h2>Contribution Bonus</h2>
+    <p>Verified activities (volunteering, health service, digital commons) provide up to +20% bonus.</p>
+  </section>
 
-  <h2>4. Education Bonus Model</h2>
-  <p>Education levels contribute to UBI as follows (if accredited):</p>
-  <ul>
-    <li>High School: +5%</li>
-    <li>Bachelor's: +15%</li>
-    <li>Master's: +25%</li>
-    <li>PhD: +35%</li>
-  </ul>
-  <p><strong>Important:</strong> Only degrees from government-recognized or officially accredited institutions are accepted. Private, informal, or unverifiable diplomas are rejected.</p>
-  <pre><code>function calculateAdvancedEducationBonus(degrees) {
-  const levelPriority = ['high_school', 'bachelor', 'master', 'phd'];
-  const weights = { high_school: 0.05, bachelor: 0.15, master: 0.25, phd: 0.35 };
-  let maxValidLevel = null;
-  for (let degree of degrees) {
-    if (degree.accredited && levelPriority.includes(degree.level)) {
-      if (!maxValidLevel || levelPriority.indexOf(degree.level) > levelPriority.indexOf(maxValidLevel)) {
-        maxValidLevel = degree.level;
-      }
-    }
-  }
-  return maxValidLevel ? weights[maxValidLevel] : 0;
-}</code></pre>
+  <section id="penalty">
+    <h2>Penalty Model</h2>
 
-  <h2>5. Contribution Score Model</h2>
-  <p>Verified voluntary activities grant bonuses up to +20%:</p>
-  <ul>
-    <li>NGO service, public digital projects, health outreach</li>
-    <li>All data must be verified through authorized partner platforms</li>
-  </ul>
-  <pre><code>function calculateContributionBonus(activities) {
-  let bonus = 0;
-  for (let activity of activities) {
-    if (activity.verified) {
-      bonus += activity.value;
-    }
-  }
-  return Math.min(bonus, 0.2);
-}</code></pre>
+    <h3>By Sentence Length</h3>
+    <ul>
+      <li>&lt; 6 months: −5%</li>
+      <li>6 months–2 years: −15%</li>
+      <li>2–5 years: −25%</li>
+      <li>5–10 years: −40%</li>
+      <li>&gt; 10 years: −60% (plus no bonuses for 2 years)</li>
+    </ul>
 
-  <h2>6. Penalty System</h2>
-  <p>Two algorithms govern legal penalties: sentence duration and offense category.</p>
+    <h3>By Offense Type</h3>
+    <ul>
+      <li>Contravention: −5%</li>
+      <li>Délit: −15%</li>
+      <li>Grave Délit: −25%</li>
+      <li>Crime: −40%</li>
+      <li>Constitutional Offense: −60%</li>
+    </ul>
+  </section>
 
-  <h3>6.1 Duration-Based Penalty</h3>
-  <ul>
-    <li>< 6 months: −5%</li>
-    <li>6 months–2 years: −15%</li>
-    <li>2–5 years: −25%</li>
-    <li>5–10 years: −40%</li>
-    <li>> 10 years: −60% and loss of bonuses for 2 years</li>
-  </ul>
-  <pre><code>function calculateUBIPenalty(sentenceYears) {
-  if (sentenceYears <= 0.5) return 0.05;
-  if (sentenceYears <= 2) return 0.15;
-  if (sentenceYears <= 5) return 0.25;
-  if (sentenceYears <= 10) return 0.40;
-  return 0.60;
-}</code></pre>
+  <section id="formula">
+    <h2>Final Calculation</h2>
+    <pre><code>
+Final_UBI = Base_UBI × (1 + EducationBonus + ContributionBonus − PenaltyFactor)
+    </code></pre>
+    <p>Constraints: Bonus ≤ +60%, Penalty ≤ −60%, Min UBI = 800 EUR/month</p>
+  </section>
 
-  <h3>6.2 Offense-Based Penalty</h3>
-  <ul>
-    <li>Contravention: −5%</li>
-    <li>Délit: −15%</li>
-    <li>Grave Délit: −25%</li>
-    <li>Crime: −40%</li>
-    <li>Constitutional Offense (e.g., terrorism): −60%</li>
-  </ul>
-  <pre><code>function calculatePenaltyByOffense(offenseType) {
-  const penalties = {
-    contravention: 0.05,
-    delit: 0.15,
-    grave_delit: 0.25,
-    crime: 0.40,
-    constitutional_offense: 0.60
-  };
-  return penalties[offenseType] || 0;
-}</code></pre>
+  <section id="legal">
+    <h2>Legal Basis</h2>
+    <p>Rooted in French Constitution (1958), Articles 1, 34, 55, 66, 68. See <code>data/constitution_1958.txt</code>.</p>
+  </section>
 
-  <h2>7. Final UBI Calculation Formula</h2>
-  <pre><code>Base_UBI = 1400;
-Final_UBI = Base_UBI × (1 + EducationBonus + ContributionBonus − PenaltyFactor);
-</code></pre>
-  <p>Total adjustments are capped between −60% and +60%. UBI cannot fall below 800 EUR/month.</p>
-
-  <h2>8. Privacy, Compliance & Integrity</h2>
-  <ul>
-    <li>GDPR-compliant, audit-traceable storage and processing</li>
-    <li>Only accredited authorities can write to UBI-ID system</li>
-    <li>Citizens can access but not alter historical records</li>
-  </ul>
-
-  <h2>9. Constitutional Basis</h2>
-  <p>The system is grounded in the 1958 French Constitution and its updates, referencing Articles 1, 34, 55, 66, and 68. Full text provided in <code>data/constitution_1958.txt</code>.</p>
-
-  <h2>10. Conclusion & Future Vision</h2>
-  <p>UBI-ID offers a just, dynamic, and legally secure path to income stability in an age of automation. It rewards learning, service, and lawful conduct. Future iterations may expand to integrate EU digital ID and cross-border income rights.</p>
-
-  <hr />
-  <p><em>All rights reserved © 2025 — Enes Balıkçı</em></p>
+  <footer>
+    <hr />
+    <p><em>All rights reserved © 2025 — Enes Balıkçı</em></p>
+  </footer>
 </body>
 </html>
