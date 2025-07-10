@@ -1,0 +1,21 @@
+
+body {
+  background-color: #f9f9f9;
+  color: #111;
+  font-family: 'Helvetica Neue', sans-serif;
+  padding: 2rem;
+  line-height: 1.6;
+}
+h1, h2, h3 {
+  color: #000;
+}
+code {
+  background: #eee;
+  padding: 2px 4px;
+  font-family: monospace;
+}
+pre {
+  background: #f0f0f0;
+  padding: 1rem;
+  overflow-x: auto;
+}
